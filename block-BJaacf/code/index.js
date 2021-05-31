@@ -64,6 +64,14 @@ for (let num of numbers) {
 
 // 9. Log all the element of the array one by one
 
-
+for (let num of numbers) {
+    console.log(num, "each value");
+}
 
 // 10. Find all the number in the array that is divisible by 3
+
+for (let num of numbers) {
+    if(num%3==0) {
+        console.log(num);
+    }
+}
