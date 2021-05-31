@@ -95,7 +95,7 @@ console.log(movies[0].genres[movies[0].genres.length-1]);
 
 // 17. Log the first genres of the second movie (using the length property of array)
 
-//console.log(movies[1].genres[]);
+console.log(movies[1].genres[0]);
 
 // 18. Log all the genres of the first movie one by one
 
@@ -111,29 +111,70 @@ for (let gen of movies[1].genres) {
 
 // 20. Log if the first actor of the first movie is `Rachel McAdams` or not (You have to log true or false)
 
-//movies[0].actors[0] === "Rachel McAdams" ? true : false;
+console.log(movies[0].actors[0] == "Rachel McAdams");
 
 // 21. Log if the second actor (index 1) of the second movie is `Natalie Portman` or not (You have to log true or false)
 
+console.log(movies[1].actors[1] == `Natalie Portman`);
+
 // 22. Log if the year of all three movies is greater than `2017` or not one by one. (Log true or false)
 
-allYears = [movies[0].year, movies[1].year, movies[2].year]
-for (let yr in allYears) {
-  if yr>
+for (let mov of movies) {
+  console.log(mov.year > 2017);
 }
 
 // 23. Log the title of all three movies one by one.
 
+for (let tit of movies) {
+  console.log(tit.title);
+}
+
 // 24. Log if the title of the first movie is `Hannah` or not
+
+console.log(movies[0].title == `Hannah`);
 
 // 25. Log the number of actors in all three movies one by one
 
+for (let mov of movies) {
+  for (let actor of mov.actors) {
+    console.log(actor);
+  }
+}
+
 // 26. Log the number of genres in all three movies one by one
+
+for (let mov of movies) {
+  console.log(mov.genres.length, "length")
+};
 
 // 27. Log the name of all the movies with more than 1 genre
 
+for (let mov of movies) {
+  if(mov.genres.length>1) {
+    console.log(mov.title);
+  }
+}
+
 // 28. Log the name of all the movies with more than 1 actors
+
+for (let mov of movies) {
+  if(mov.actors.length>1) {
+    console.log(mov.title);
+  }
+}
 
 // 29. Log the name of all the movies with exactly 3 actors
 
+for (let mov of movies) {
+  if (mov.actors.length == 3) {
+    console.log(mov.title);
+  }
+}
+
 // 30. Log the name of all the movies with year `2018`
+
+for (let mov of movies) {
+  if (mov.year == 2018) {
+    console.log(mov.title, "year")
+  }
+}
