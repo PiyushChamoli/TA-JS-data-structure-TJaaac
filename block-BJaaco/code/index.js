@@ -5,21 +5,31 @@ let userIds = [1230, 234, 1278, 984, 763, 900];
 // 1. Add all the values of numbers and userIds array into the new newly created array named `collection`
 
 let collection = [];
-let total = 0;
 for (let number of numbers) {
-  total += number;
+  collection.push(number);
 }
 for (let user of userIds) {
-  total += user;
+  collection.push(user);
 }
-collection.push(total);
 console.log(collection);
 
 // 2. Add all the even numbers from both arrays numbers and userIds into a newly created array named `evenCollection`
 
-
+let evenCollection = [];
+for (let num of collection) {
+  if (num % 2 == 0) {
+    evenCollection.push(num);
+  }
+}
 
 // 3. Add all the odd numbers from both arrays numbers and userIds into a newly created array named `oddCollection`
+
+let oddCollection = [];
+for (let num of collection) {
+  if (num % 2 !== 0) {
+    oddCollection.push(num);
+  }
+}
 
 /*
   @param means parameter
@@ -38,6 +48,7 @@ console.log(collection);
 */
 
 function times(no, str="test") {
+  if (no<1) return [];
   let arr = [];
   for (let i=0; i<no; i++) {
     arr.push(str);
@@ -91,10 +102,14 @@ function revert(array) {
     clear(['Ryan', null, 0,  'John', 'Bran']); //['Bran', 'John', 'Ryan']
 */
 
+function isUwanted(value) {
+  return (value == 0 || value == false || value == "" || value == undefined || value == null);
+}
+
 function clear(array) {
   let arr = [];
   for (let value of array) {
-    if (value !== 0 && value !== false && value !== "" && value !== undefined && value !== null) {
+    if (!isUwanted(value)) {
       arr.unshift(value);
     }
   }
@@ -122,9 +137,10 @@ function clear(array) {
 
 function arrayToObj(array) {
   let obj = {};
-  for (let val of array) {
-    
+  for (let i = 0; i< array.length; i++) {
+    obj[i] = array[i];
   }
+  return obj;
 }
 
 // Uncomment the code below and test the output
