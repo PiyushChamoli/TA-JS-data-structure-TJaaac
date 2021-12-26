@@ -84,6 +84,14 @@ function revert(array) {
   return arr; 
 }
 
+function revert(array) {
+  let arr = [];
+  for (let i = array.length-1; i>=0; i--) {
+    arr.push(array[i]);
+  }
+  return arr;
+}
+
 // Uncomment the code below and test the output
 // console.log(revert([1, 2, 3, 4])); // [4, 3, 2, 1]
 // console.log(revert(['a', 'd', 'c', 'b'])); // ['b', 'c', 'd', 'a']
